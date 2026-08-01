@@ -12,7 +12,7 @@ export function generateAgentCard() {
 
   return {
     name: 'Toppa',
-    description: 'AI agent for digital goods and utility payments (airtime, data, bills, gift cards) across 170+ countries, powered by Celo blockchain.',
+    description: 'Autonomous AI financial agent for the global unbanked — an expanding suite of financial services built on Celo. It delivers airtime, data, bills, and gift cards across 170+ countries, with money movement, savings, and agent-to-agent commerce. Payments settle in cUSD via x402 micropayments with on-chain ERC-8004 reputation.',
     url: `${apiUrl}/a2a`,
     provider: {
       organization: 'Toppa',

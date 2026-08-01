@@ -1,6 +1,6 @@
 # Toppa Agent
 
-> AI agent for digital goods and utility payments across 170+ countries, powered by Celo.
+> Autonomous AI financial agent for the global unbanked — an expanding suite of financial services built on Celo. Delivers airtime, data, bills, and gift cards across 170+ countries, with money movement, savings, and agent-to-agent commerce on the roadmap.
 
 **Use it:** [t.me/toppa402bot](https://t.me/toppa402bot) | WhatsApp (self-hosted — see setup below) | **See it:** [toppa.cc](https://toppa.cc) | **Verify it:** [8004scan](https://www.8004scan.io/agents/celo/1870) · [Agentscan](https://agentscan.info/agents/e42ebcb1-fd03-4fe8-ac1a-3cf1c24d80df) · [Karma](https://www.karmahq.xyz/project/toppa) · [Self Agent ID](https://app.ai.self.xyz)
 

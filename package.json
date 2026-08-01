@@ -1,7 +1,7 @@
 {
   "name": "toppa-agent",
   "version": "2.0.0",
-  "description": "AI agent for digital goods and utility payments across 170+ countries on Celo",
+  "description": "Autonomous AI financial agent for the global unbanked — an expanding suite of financial services built on Celo. Delivers airtime, data, bills, and gift cards across 170+ countries, with money movement, savings, and agent-to-agent commerce on the roadmap.",
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",

@@ -1849,7 +1849,11 @@ export async function startTelegramBot(expressApp?: import('express').Express) {
   }
 
   // Start scheduler (await ensures stuck-task recovery runs before accepting requests)
-  await startScheduler(async (task: ScheduledTask) => {
+  // Disable with ENABLE_SCHEDULER=false to cut LLM/API costs during refactoring
+  if (process.env.ENABLE_SCHEDULER === 'false') {
+    console.log('[Scheduler] Disabled via ENABLE_SCHEDULER=false');
+  } else {
+    await startScheduler(async (task: ScheduledTask) => {
     try {
       const { total, serviceFee } = calculateTotalPayment(task.productAmount);
       const orderId = generateOrderId();
@@ -1944,11 +1948,16 @@ export async function startTelegramBot(expressApp?: import('express').Express) {
       console.error(`[Scheduler] Failed to notify user for recurring task ${task._id}:`, err.message);
     }
   });
+  }
 
-  // Start heartbeat
-  startHeartbeat(async (chatId: number, text: string) => {
-    await tg('sendMessage', { chat_id: chatId, text: stripMarkdown(text) });
-  });
+  // Start heartbeat (disable with ENABLE_HEARTBEAT=false to cut LLM/API costs)
+  if (process.env.ENABLE_HEARTBEAT !== 'false') {
+    startHeartbeat(async (chatId: number, text: string) => {
+      await tg('sendMessage', { chat_id: chatId, text: stripMarkdown(text) });
+    });
+  } else {
+    console.log('[Heartbeat] Disabled via ENABLE_HEARTBEAT=false');
+  }
 
   // Sell order poller disabled — Prestmit integration paused, Cardtonic coming soon
   // startSellOrderPoller(async (_userId: string, chatId: number, message: string) => {
